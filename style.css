@@ -31,12 +31,18 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
 
 .group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contentGroup {
   display: flex;
   flex-direction: column;
 }
@@ -50,11 +56,17 @@ main img {
   flex: 2;
 }
 
+.form-atting {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 1px 20px;
   text-align: center;
 }
 
@@ -81,6 +93,8 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
+  display: flex;
+  flex-direction: column;
   border: 2px solid #ff385c;
   padding: 10px;
 }
@@ -101,7 +115,6 @@ form button {
   color: #fff;
   font-size: 24px;
   padding: 15px;
-  width: 100%;
 }
 
 /* -------  Footer ------- */
@@ -117,3 +130,44 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+ @media all and (min-width: 480px) {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  form {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  } 
+
+  .item {
+    flex-direction: column;
+    align-self: center;
+  }
+
+  form button {
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .item-double {
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .form-atting {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contentGroup {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
